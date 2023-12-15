@@ -7,13 +7,13 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "protoc": "grpc_tools_node_protoc --plugin=protoc-gen-ts=node_modules/.bin/protoc-gen-ts --js_out=import_style=commonjs,binary:src/generated --ts_out=service=grpc-web:src/generated --proto_path=protos eliza.proto",
+    "protoc": "npx protoc --ts_out ./src/generated --proto_path . ./protos/eliza.proto",
     "test": "vitest"
   },
   "dependencies": {
-    "@improbable-eng/grpc-web": "^0.15.0",
     "@protobuf-ts/grpcweb-transport": "^2.9.3",
     "@protobuf-ts/plugin": "^2.9.3",
+    "@types/node": "^20.10.4",
     "google-protobuf": "^3.21.2",
     "grpc-tools": "1.12.4",
     "vue": "^3.3.9"

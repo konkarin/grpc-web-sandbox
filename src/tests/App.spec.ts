@@ -1,7 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
 import { describe, expect, test } from "vitest";
 
-import App from "./App.vue";
+import App from "@/App.vue";
+
+import { server } from "@/mocks/server";
+server.listen();
 
 describe("App.vue", () => {
   const wrapper = shallowMount(App);
@@ -13,5 +16,6 @@ describe("App.vue", () => {
   test("exec sendMsg", async () => {
     await wrapper.vm.sendMsg("hello");
     expect(wrapper.vm.msgs.length).toBe(1);
+    expect(wrapper.vm.msgs[0]).toBe("Hello world");
   });
 });
