@@ -17,7 +17,7 @@ const sendMsg = async (msg: string) => {
   }
 };
 
-defineExpose({ msgs });
+defineExpose({ msgs, sendMsg });
 </script>
 
 <template>
